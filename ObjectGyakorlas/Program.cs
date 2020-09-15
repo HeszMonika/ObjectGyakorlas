@@ -34,17 +34,31 @@ namespace ObjectGyakorlas
 
         public Kor(int sugar)
         {
-            r = sugar;
+            if (sugar < 1)
+            {
+                r = 1;
+            }
+            else
+            {
+                r = sugar;
+            }
         }
 
-        public double Kerulet()
+        private double Kerulet()
         {
             return 2 * r * Math.PI;
         }
 
-        public double Terulet()
+        private double Terulet()
         {
             return Math.PI * (r * r);
+        }
+
+        public void AdatokKiirasa()
+        {
+            Console.WriteLine("Sugár: {0}", r);
+            Console.WriteLine("Kerület: {0}", Kerulet());
+            Console.WriteLine("Terület: {0}", Terulet());
         }
     }
 
@@ -72,10 +86,7 @@ namespace ObjectGyakorlas
 
             //k.r = 12;
 
-            Console.WriteLine("Kör kerülete: ");
-            Console.WriteLine(k.Kerulet());
-            Console.WriteLine("Kör területe: ");
-            Console.WriteLine(k.Terulet());
+            k.AdatokKiirasa();
 
             Console.ReadKey();
         }
