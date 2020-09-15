@@ -8,8 +8,14 @@ namespace ObjectGyakorlas
 {
     class Teglalap
     {
-        public int a;
-        public int b;
+        private int a;
+        private int b;
+
+        public Teglalap(int fuggoleges, int vizszintes)
+        {
+            a = fuggoleges;
+            b = vizszintes;
+        }
 
         public int Kerulet()
         {
@@ -24,7 +30,12 @@ namespace ObjectGyakorlas
 
     class Kor
     {
-        public int r;
+        private int r;
+
+        public Kor(int sugar)
+        {
+            r = sugar;
+        }
 
         public double Kerulet()
         {
@@ -41,19 +52,29 @@ namespace ObjectGyakorlas
     {
         static void Main(string[] args)
         {
-            Teglalap t = new Teglalap();
+            Console.WriteLine("Írja be a téglalap függőleges oldalát: ");
+            int fuggoleges = int.Parse(Console.ReadLine());
+            Console.WriteLine("Írja be a téglalap vízszintes oldalát: ");
+            int vizszintes = int.Parse(Console.ReadLine());
+            Teglalap t = new Teglalap(fuggoleges, vizszintes);
 
-            t.a = 4;
-            t.b = 5;
+            //t.a = 4;
+            //t.b = 5;
 
+            Console.WriteLine("Téglalap kerülete: ");
             Console.WriteLine(t.Kerulet());
+            Console.WriteLine("Téglalap területe: ");
             Console.WriteLine(t.Terulet());
 
-            Kor k = new Kor();
+            Console.WriteLine("Írja be a kör sugarát: ");
+            int sugar = int.Parse(Console.ReadLine());
+            Kor k = new Kor(sugar);
 
-            k.r = 12;
+            //k.r = 12;
 
+            Console.WriteLine("Kör kerülete: ");
             Console.WriteLine(k.Kerulet());
+            Console.WriteLine("Kör területe: ");
             Console.WriteLine(k.Terulet());
 
             Console.ReadKey();
