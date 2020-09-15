@@ -22,17 +22,39 @@ namespace ObjectGyakorlas
         }
     }
 
+    class Kor
+    {
+        public int r;
+
+        public double Kerulet()
+        {
+            return 2 * r * Math.PI;
+        }
+
+        public double Terulet()
+        {
+            return Math.PI * (r * r);
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Teglalap teglalap = new Teglalap();
+            Teglalap t = new Teglalap();
 
-            teglalap.a = 4;
-            teglalap.b = 5;
+            t.a = 4;
+            t.b = 5;
 
-            Console.WriteLine(teglalap.Kerulet());
-            Console.WriteLine(teglalap.Terulet());
+            Console.WriteLine(t.Kerulet());
+            Console.WriteLine(t.Terulet());
+
+            Kor k = new Kor();
+
+            k.r = 12;
+
+            Console.WriteLine(k.Kerulet());
+            Console.WriteLine(k.Terulet());
 
             Console.ReadKey();
         }
